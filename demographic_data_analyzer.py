@@ -4,8 +4,8 @@ def calculate_demographic_data(print_data=True):
     # Read data from local file
     df = pd.read_csv("adult.data.csv")
 
-    # Variables (set to None until implemented in next branch)
-    race_count = None
+    # Variables
+    race_count = df['race'].value_counts()
     average_age_men = None
     percentage_bachelors = None
     higher_education = None

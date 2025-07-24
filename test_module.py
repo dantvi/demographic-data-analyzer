@@ -6,7 +6,6 @@ class DemographicAnalyzerTestCase(unittest.TestCase):
     def setUpClass(self):
         self.data = demographic_data_analyzer.calculate_demographic_data(print_data=False)
 
-    @unittest.skip("Skip during setup branch")
     def test_race_count(self):
         actual = self.data['race_count'].tolist()
         expected = [27816, 3124, 1039, 311, 271]
