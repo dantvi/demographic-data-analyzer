@@ -10,8 +10,10 @@ def calculate_demographic_data(print_data=True):
     percentage_bachelors = round((df[df['education'] == 'Bachelors'].shape[0] / df.shape[0]) * 100, 1)
     higher_education = df[df['education'].isin(['Bachelors', 'Masters', 'Doctorate'])]
     higher_education_rich = round((higher_education[higher_education['salary'] == '>50K'].shape[0] / higher_education.shape[0]) * 100, 1)
-    lower_education = None
-    lower_education_rich = None
+    lower_education = df[~df['education'].isin(['Bachelors', 'Masters', 'Doctorate'])]
+    lower_education_rich = round((lower_education[lower_education['salary'] == '>50K'].shape[0] / lower_education.shape[0]) * 100, 1)
+
+
     min_work_hours = None
     num_min_workers = None
     rich_percentage = None
