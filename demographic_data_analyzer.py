@@ -12,9 +12,7 @@ def calculate_demographic_data(print_data=True):
     higher_education_rich = round((higher_education[higher_education['salary'] == '>50K'].shape[0] / higher_education.shape[0]) * 100, 1)
     lower_education = df[~df['education'].isin(['Bachelors', 'Masters', 'Doctorate'])]
     lower_education_rich = round((lower_education[lower_education['salary'] == '>50K'].shape[0] / lower_education.shape[0]) * 100, 1)
-
-
-    min_work_hours = None
+    min_work_hours = df['hours-per-week'].min()
     num_min_workers = None
     rich_percentage = None
     highest_earning_country = None

@@ -31,7 +31,6 @@ class DemographicAnalyzerTestCase(unittest.TestCase):
         expected = 17.4
         self.assertAlmostEqual(actual, expected)
 
-    @unittest.skip("Skip during setup branch")
     def test_min_work_hours(self):
         actual = self.data['min_work_hours']
         expected = 1
