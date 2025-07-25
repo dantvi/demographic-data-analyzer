@@ -36,7 +36,6 @@ class DemographicAnalyzerTestCase(unittest.TestCase):
         expected = 1
         self.assertAlmostEqual(actual, expected)
 
-    @unittest.skip("Skip during setup branch")
     def test_rich_percentage(self):
         actual = self.data['rich_percentage']
         expected = 10
