@@ -7,7 +7,7 @@ def calculate_demographic_data(print_data=True):
     # Variables
     race_count = df['race'].value_counts()
     average_age_men = round(df[df['sex'] == 'Male']['age'].mean(), 1)
-    percentage_bachelors = None
+    percentage_bachelors = round((df[df['education'] == 'Bachelors'].shape[0] / df.shape[0]) * 100, 1)
     higher_education = None
     lower_education = None
     higher_education_rich = None
