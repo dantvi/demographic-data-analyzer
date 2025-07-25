@@ -11,7 +11,6 @@ class DemographicAnalyzerTestCase(unittest.TestCase):
         expected = [27816, 3124, 1039, 311, 271]
         self.assertCountEqual(actual, expected)
 
-    @unittest.skip("Skip during setup branch")
     def test_average_age_men(self):
         actual = self.data['average_age_men']
         expected = 39.4
