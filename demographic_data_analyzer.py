@@ -15,10 +15,13 @@ def calculate_demographic_data(print_data=True):
     min_work_hours = df['hours-per-week'].min()
     num_min_workers = df[df['hours-per-week'] == min_work_hours]
     rich_percentage = round((num_min_workers[num_min_workers['salary'] == '>50K'].shape[0] / num_min_workers.shape[0]) * 100, 1)
+    country_counts = df['native-country'].value_counts()
+    rich_counts = df[df['salary'] == '>50K']['native-country'].value_counts()
+    rich_country_ratios = (rich_counts / country_counts) * 100
+    highest_earning_country = rich_country_ratios.idxmax()
+    highest_earning_country_percentage = round(rich_country_ratios.max(), 1)
 
-
-    highest_earning_country = None
-    highest_earning_country_percentage = None
+    
     top_IN_occupation = None
 
     # DO NOT MODIFY BELOW THIS LINE

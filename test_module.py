@@ -41,13 +41,11 @@ class DemographicAnalyzerTestCase(unittest.TestCase):
         expected = 10
         self.assertAlmostEqual(actual, expected)
 
-    @unittest.skip("Skip during setup branch")
     def test_highest_earning_country(self):
         actual = self.data['highest_earning_country']
         expected = 'Iran'
         self.assertEqual(actual, expected)
 
-    @unittest.skip("Skip during setup branch")
     def test_highest_earning_country_percentage(self):
         actual = self.data['highest_earning_country_percentage']
         expected = 41.9
