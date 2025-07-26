@@ -20,9 +20,7 @@ def calculate_demographic_data(print_data=True):
     rich_country_ratios = (rich_counts / country_counts) * 100
     highest_earning_country = rich_country_ratios.idxmax()
     highest_earning_country_percentage = round(rich_country_ratios.max(), 1)
-
-    
-    top_IN_occupation = None
+    top_IN_occupation = df[(df['native-country'] == 'India') & (df['salary'] == '>50K')]['occupation'].value_counts().idxmax()
 
     # DO NOT MODIFY BELOW THIS LINE
     if print_data:
